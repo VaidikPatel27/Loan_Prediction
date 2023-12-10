@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFF4F4;
+            /* margin: 0; */
+            /* padding: 0; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        form {
+            background-color: #F7E6C4;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 2px;
+            width: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: #645910;
+            justify-content: center;
+        }
+
+        
+
+        label {
+            display: block;
+            color: #606C5D;
+            margin-bottom: 8px;
+            font-weight: bold;
+            align-items: center;
+        }
+
+        input {
+            display: block;
+            color: #000000;
+            margin-bottom: 20px;
+            font-weight: bold;
+            height: 29px;
+            width: 490px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            height: auto;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        p {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #645910;
+            color: #FFF4F4;
+            font-size: 20px;
+            padding: 10px;
+            width: 100%;
+            border-radius: 18px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            justify-content: center;
+        }
+    </style>
+    <title>Loan Eligibility Form</title>
+</head>
+<body>
+
+
+    <form method="post" action="/predict">
+        <header><h1>Loan Eligibility Predictor</h1></header>
+        
+
+        <!-- Account Balance -->
+        <label for="AccountBalance">Total Account Balance in ₹</label>
+        <select id="AccountBalance" name="AccountBalance">
+            <option value="1">No account</option>
+            <option value="2">Below ₹1000</option>
+            <option value="3">₹1000  to ₹6000</option>
+            <option value="4">₹6000 or Above</option>
+        </select>
+    
+        
+        <!-- Duration -->
+        <label for="duration">Duration of Loan (month):</label>
+        <input type='number' id="duration" name="duration" required>
+
+        <!-- Payment Status of Previous Credit -->
+        <label for="PreviousPayment">Payment Status of Previous Loan</label>
+        <p1>if non select Previous Loan paid</p1>
+        <select id="PreviousPayment" name="PreviousPayment">
+            <option value="0">Delayed</option>
+            <option value="1">Other Loans</option>
+            <option value="2">Paid Up</option>
+            <option value="3">No problem with Current Loans</option>
+            <option value="4">Previous Loan paid</option>
+        </select>
+
+        <!-- Purpose -->
+        <label for="Purpose">Purpose of the Loan</label>
+        <select id="Purpose" name="Purpose">
+            <option value="0">New Car</option>
+            <option value="1">Used Car</option>
+            <option value="2">Furniture</option>
+            <option value="3">Radio/TV</option>
+            <option value="4">Appliances</option>
+            <option value="5">Repair</option>
+            <option value="6">Vacation</option>
+            <option value="8">Retaining</option>
+            <option value="9">Business</option>
+            <option value="10">Other</option>
+        </select>
+
+        <!-- Credit amount -->
+        <label for="CreditAmount">Loan amount in ₹</label>
+        <input type='number' id="CreditAmount" name="CreditAmount" required>
+
+
+        <!-- Value Savings/Stocks -->
+        <label for="SavingsStocks">Total savings and stocks in ₹</label>
+        <select id="SavingsStocks" name="SavingsStocks">
+            <option value="1">None</option>
+            <option value="2">Below ₹10,000</option>
+            <option value="3">₹10,000 to ₹50,000</option>
+            <option value="4">₹50,000 to ₹1,00,000</option>
+            <option value="5">Above ₹1,00,000</option>
+        </select>
+
+        <!-- Length of current employment -->
+        <label for="EmploymentDuration">Length of current employment</label>
+        <select id="EmploymentDuration" name="EmploymentDuration">
+            <option value="1">Unemployed</option>
+            <option value="2">Less than 1 year</option>
+            <option value="3">1 to 4 years</option>
+            <option value="4">4 to 7 years</option>
+            <option value="5">Above 7 years</option>
+        </select>
+
+        <!-- Installment % -->
+        <label for="Installment">Loan repayment duration</label>
+        <select id="Installment" name="Installment">
+            <option value="1">Less than 3 years</option>
+            <option value="2">3 to 4 years</option>
+            <option value="3">4 to 5 years</option>
+            <option value="4">More than 5 years</option>
+        </select>
+
+        <!-- Sex & Marital status -->
+        <label for="Sex">Sex & Marital status:</label>
+        <select id="Sex" name="Sex">
+            <option value="1">Male/Female Divorces</option>
+            <option value="2">Male/Female single</option>
+            <option value="3">Male Married/Widowed</option>
+            <option value="4">Female Married/Widowed</option>
+        </select>
+
+        <!-- Guarantors -->
+        <label for="Guarantors">Guarantors</label>
+        <select id="Guarantors" name="Guarantors">
+            <option value="1">None</option>
+            <option value="2">Co-applicant</option>
+            <option value="3">Guarantor Available</option>
+        </select>
+
+        <!-- Duration in current address -->
+        <label for="DurationAdress">Duration in current address</label>
+        <select id="DurationAdress" name="DurationAdress">
+            <option value="1">Less than 1 year</option>
+            <option value="2">1 to 4 years</option>
+            <option value="3">4 to 7 years</option>
+            <option value="4">More than 7 years</option>
+        </select>
+
+        <!-- Most valueable available asset -->
+        <label for="Asset">Most valueable available asset</label>
+        <select id="Asset" name="Asset">
+            <option value="1">None</option>
+            <option value="2">Car</option>
+            <option value="3">Life Insurance</option>
+            <option value="4">Real Estate</option>
+        </select>
+
+        <!-- Age (years) -->
+        <label for="Age">Age in years</label>
+        <input type='number' id="Age" name="Age" required>
+
+        <!-- No of Credits at this Bank -->
+        <label for="CreditsAtThisBank">No of Loans at this Bank</label>
+        <select id="CreditsAtThisBank" name="CreditsAtThisBank">
+            <option value="1">0</option>
+            <option value="2">1 or 3</option>
+            <option value="3">4 to 5</option>
+            <option value="4">Above 6</option>
+        </select>
+
+        <!-- Concurrent Credits -->
+        <label for="CurrentCredits">Loans from other Institutions</label>
+        <select id="CurrentCredits" name="CurrentCredits">
+            <option value="1">Other banks</option>
+            <option value="2">debt stores</option>
+            <option value="3">None</option>
+        </select>
+
+        <!-- Type of apartment -->
+        <label for="ApartmentType">Type of apartment living in</label>
+        <select id="ApartmentType" name="ApartmentType">
+            <option value="1">Free</option>
+            <option value="2">Rented</option>
+            <option value="3">Owned</option>
+        </select>
+
+        <!-- Occupation -->
+        <label for="Occupation">Occupation</label>
+        <select id="Occupation" name="Occupation">
+            <option value="1">unemployed, unskilled</option>
+            <option value="2">unemployed, Citizen</option>
+            <option value="3">Employed</option>
+            <option value="4">executive</option>
+        </select>
+
+        <!-- No of dependents -->
+        <label for="Dependents">No of dependents</label>
+        <select id="Dependents" name="Dependents">
+            <option value="1">3 or More</option>
+            <option value="2">Less than 3</option>
+        </select>
+
+        <!-- Telephone -->
+        <label for="Telephone">Telephone</label>
+        <select id="Telephone" name="Telephone">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </select>
+
+        <!-- Foreign Worker -->
+        <label for="ForeignWorker">Foreign Worker</label>
+        <select id="ForeignWorker" name="ForeignWorker">
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </select>
+        
+        <div class="container">
+            <button type="submit">Projected Sales</button>
+        </div>
+      
+        
+        
+
+        <div class = 'container'>
+            {% if result %}
+                <p>{{ result }}</p>
+            {% endif %}
+        </div>
+        <!-- <input type="submit" value="Submit"> -->
+    </form>
+
+
+</body>
+</html>
