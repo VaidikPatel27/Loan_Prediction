@@ -37,8 +37,6 @@
             justify-content: center;
         }
 
-        
-
         label {
             display: block;
             color: #606C5D;
@@ -59,6 +57,7 @@
         select {
             width: 100%;
             padding: 8px;
+            font-size: 25px;
             margin-bottom: 16px;
             box-sizing: border-box;
         }
@@ -67,6 +66,7 @@
             background-color: #4caf50;
             color: #fff;
             padding: 10px 15px;
+            font-size: 17px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -98,6 +98,14 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
             justify-content: center;
+        }
+
+        p1 {
+            display: block;
+            color: #646664;
+            margin-bottom: 18px;
+            /* font-weight: ; */
+            align-items: center;
         }
 
         /* Media query for small devices like iPhones */
@@ -154,7 +162,7 @@
 
         <!-- Payment Status of Previous Credit -->
         <label for="PreviousPayment">Payment Status of Previous Loan</label>
-        <p1>if non select Previous Loan paid</p1>
+        <p1>*If None select "Previous Loan paid"</p1>
         <select id="PreviousPayment" name="PreviousPayment">
             <option value="0">Delayed</option>
             <option value="1">Other Loans</option>
